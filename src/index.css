@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    overflow-x: hidden;
+    cursor: none;
+}
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+html {
+    scrollbar-width: none;
+}
+
+.flash {
+  animation: flashScreen 2s forwards;
+}
+
+@keyframes flashScreen {
+  0% { background: black; }
+  50% { background: #00f; } /* яркий синий */
+  100% { background: black; }
+}
