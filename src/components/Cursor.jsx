@@ -1,69 +1,10 @@
-// import { motion, useMotionValue, useSpring } from "framer-motion";
-// import { useEffect, useState } from "react";
-
-// export default function Cursor() {
-//   const [clicked, setClicked] = useState(false);
-//   const [hoverText, setHoverText] = useState(false);
-
-//   // координаты мышки
-//   const mouseX = useMotionValue(-100);
-//   const mouseY = useMotionValue(-100);
-
-//   // плавное движение
-//   const springX = useSpring(mouseX, { damping: 20, stiffness: 150 });
-//   const springY = useSpring(mouseY, { damping: 20, stiffness: 150 });
-
-//   // отслеживаем движение и клики
-//   useEffect(() => {
-//     const move = (e) => {
-//       mouseX.set(e.clientX - 15);
-//       mouseY.set(e.clientY - 15);
-//     };
-//     const down = () => setClicked(true);
-//     const up = () => setClicked(false);
-
-//     window.addEventListener("mousemove", move);
-//     window.addEventListener("mousedown", down);
-//     window.addEventListener("mouseup", up);
-
-//     return () => {
-//       window.removeEventListener("mousemove", move);
-//       window.removeEventListener("mousedown", down);
-//       window.removeEventListener("mouseup", up);
-//     };
-//   }, [mouseX, mouseY]);
-
-//   return (
-//     <motion.div
-//       style={{
-//         x: springX,
-//         y: springY,
-//       }}
-//       animate={{
-//         scale: clicked ? 4 : hoverText ? 2 : 1, // увеличиваем при клике и при hoverText
-//         backgroundColor: hoverText ? "#ffffff" : "#ffffff", // можно менять на другой цвет
-//       }}
-//       transition={{ type: "spring", stiffness: 300, damping: 20 }}
-//       className="fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none z-[9999] mix-blend-difference "
-//     />
-//   );
-// }
-
-// И чтобы hoverText работал, на текстах делаем так:
-{/* <h1
-  onMouseEnter={() => setHoverText(true)}
-  onMouseLeave={() => setHoverText(false)}
->
-  Frontend Developer
-</h1> */}
-
-
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useEffect, useState } from "react";
 
 export default function Cursor() {
   const [clicked, setClicked] = useState(false);
   const [hoverText, setHoverText] = useState(false);
+  
 
   // позиция мыши
   const mouseX = useMotionValue(-100);
@@ -122,7 +63,7 @@ useEffect(() => {
           y: dotY,
         }}
         className="
-          fixed top-2 left-2
+          fixed 
           w-2 h-2
           rounded-full
           bg-white
@@ -143,7 +84,7 @@ useEffect(() => {
         backgroundColor: hoverText ? "#ffffff" : "#ffffff", // можно менять на другой цвет
       }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      className="fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none z-[9999] mix-blend-difference "
+      className="fixed -top-3 -left-3 w-8 h-8 rounded-full pointer-events-none z-[9999] mix-blend-difference "
      />
     </>
   );
