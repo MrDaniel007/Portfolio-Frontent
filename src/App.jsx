@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import myRouter from "./router"
 import {RouterProvider} from 'react-router-dom'
-import ParticlesBg from './components/ParticlesBg'
 import Cursor from './components/Cursor'
 import Loader from './components/Loader'
 import BurgerMenu from './components/BurgerMenu'
@@ -11,13 +10,26 @@ import './App.css'
 import AOS from 'aos';
 import 'aos/dist/aos.css'
 import ScrollBar from './components/ScrollIndicator'
+import ScrollLift from './components/ScrollLift'
 
 function App() {
-  const [loaded, setLoaded] = useState(false);
 
  useEffect(() => {
-    AOS.init({ duration: 1000, once: true })
+    window.scrollTo(0, 0); // при загрузке страницы скролл вверх
   }, []);
+
+useEffect(() => {
+  AOS.init({
+    duration: 1000,       // Длительность анимации
+    easing: 'ease-out-cubic',
+    once: false,           // Анимация повторяется при скролле
+    mirror: true,          // Повторять анимацию при скролле вверх
+  });
+  AOS.refresh();           // Обновление всех элементов
+}, []);
+
+
+  
 
   return (
     <>
@@ -29,13 +41,13 @@ function App() {
       width: '100vw',
       height: '100vh',
     }}/>
-    <BurgerMenu/>
-  {!loaded && <Loader onFinish={() => setLoaded(true)} />}
 
-        <Loader />
-      
-    <ParticlesBg/>
-    <div></div>
+
+<Loader/>
+    <BurgerMenu/>
+
+
+      <ScrollLift/>
     <Cursor/>
       <ScrollBar/>
       <RouterProvider router={myRouter}>

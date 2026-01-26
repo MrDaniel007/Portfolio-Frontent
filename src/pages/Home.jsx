@@ -17,6 +17,8 @@ import vs from "../assets/svg/vs.svg"
 import typescript from "../assets/svg/typescript.svg"
 import python from "../assets/svg/python.svg"
 import node from "../assets/svg/node.svg"
+import MagneticButton from "../components/MagneticButton";
+import Reactor from "../assets/svg/reactor.svg";
 
 export default function Home() {
   return (
@@ -24,11 +26,13 @@ export default function Home() {
 
       {/* HERO */}
       <section className="min-h-screen flex items-center px-8 md:px-20">
-        <div className="grid md:grid-cols-2 gap-10 w-full">
+        <div   className="grid md:grid-cols-2 gap-10 w-full">
 
           {/* LEFT */}
-          <div className="flex flex-col justify-center">
-            <p className="text-gray-400 mb-4 text-lg">
+          <div data-aos="fade-right"
+    data-aos-duration="2000"
+         data-aos-easing="ease-in-sine" className="flex flex-col justify-center" >
+            <p  className="text-gray-400 mb-4 text-lg">
               Frontend Developer
             </p>
 
@@ -43,18 +47,16 @@ export default function Home() {
               modern technologies.
             </p>
 
-            <div className="flex items-center gap-6">
- <h1 data-cursor >
-  Frontend Developer
-</h1>
-              <a
+            <div className="flex items-center gap-6 " >
+                <MagneticButton> <a 
+              
                 href="#projects"
-                className="px-6 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition"
+                className=" px-6 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition"
               >
                 My Projects
               </a>
-
-              <a
+   </MagneticButton>
+              <a 
                 href="#about"
                 className="text-gray-400 hover:text-white transition"
               >
@@ -63,15 +65,12 @@ export default function Home() {
             </div>
           </div>
 
-          {/* RIGHT
-         
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
-              className="w-72 h-72 rounded-full bg-gradient-to-tr from-blue-500/30 to-purple-500/30 blur-2xl"
-            />
-          */}
- <div className="hidden md:flex items-center justify-center relative">
+          {/* RIGHT */}
+
+ <div  data-aos="fade-left"
+    data-aos-duration="2000"
+         data-aos-easing="ease-in-sine" 
+          className="hidden md:flex items-center justify-center relative">
           <ArcReactor/></div>
 
         </div>
@@ -90,81 +89,96 @@ export default function Home() {
       </section>
 
       {/* ABOUT */}
-      <section id="about" className="py-32 px-8 md:px-20 max-w-6xl mx-auto">
+      <section data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="1500"
+      id="about" className="py-32 px-8 md:px-20 max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold mb-10">This is me</h2>
 
         <div className="grid md:grid-cols-2 gap-10 text-gray-300">
           <p>
-            I’m a self-taught frontend developer who enjoys turning ideas
-            into interactive and meaningful digital experiences.
+ I’m Daniel, a frontend developer from Bishkek, currently studying at Asian Innovative College. 
+      I specialize in React, TailwindCSS, and modern UI/UX design. I build responsive, adaptive, 
+      and branded web interfaces that feel premium, polished, and user-friendly.
           </p>
 
           <p>
-            I focus on performance, clean UI, smooth animations
-            and modern frontend architecture.
+ I enjoy breaking down complex code into clear steps, collaborating with teams using Git, and 
+      crafting interactive user experiences with smooth animations and creative details. My goal is 
+      to launch a professional portfolio and continue growing as a frontend developer who creates 
+      elegant, high-quality websites and helps others learn along the way.
           </p>
+ 
         </div>
       </section>
 
       {/* STACK */}
-      <section className="py-32 px-8 md:px-20 bg-neutral-900">
-        <h2 className="text-3xl font-bold mb-16">My Stack</h2>
+<section className="py-32 px-8 md:px-20 bg-neutral-900">
+  <div className="flex items-center gap-6 mb-16">
+    {/* Реактор Iron Man */}
+    <img
+      src={Reactor} // твой SVG файл реактора
+      alt="Arc Reactor"
+      className="w-16 h-16 animate-spin-slow"
+    />
+    <h2 className="text-4xl font-bold">My Stack</h2>
+  </div>
 
-        <div className="grid md:grid-cols-3 gap-12 text-gray-300">
+  {/* FRONTEND */}
+  <div className="grid md:grid-cols-2 gap-12 mb-20">
+    <h3
+      data-aos="fade-right"
+      className="text-5xl font-extrabold text-white"
+    >
+      Frontend
+    </h3>
+    <ul className="grid grid-cols-3 gap-6 text-gray-300 text-2xl">
+      <li data-aos="fade-up" data-aos-delay="200" className="flex items-center gap-2"><img src={html} className="w-10 h-10"/>HTML</li>
+      <li data-aos="fade-up" data-aos-delay="400" className="flex items-center gap-2"><img src={css} className="w-10 h-10"/>CSS</li>
+      <li data-aos="fade-up" data-aos-delay="600" className="flex items-center gap-2"><img src={js} className="w-10 h-10"/>JavaScript</li>
+      <li data-aos="fade-up" data-aos-delay="800" className="flex items-center gap-2"><img src={react} className="w-10 h-10"/>React</li>
+      <li data-aos="fade-up" data-aos-delay="1000" className="flex items-center gap-2"><img src={tailwind} className="w-10 h-10"/>Tailwind</li>
+      <li data-aos="fade-up" data-aos-delay="1200" className="flex items-center gap-2"><img src={fammer} className="w-10 h-10"/>Framer Motion</li>
+      <li data-aos="fade-up" data-aos-delay="1400" className="flex items-center gap-2"><img src={sass} className="w-10 h-10"/>SASS</li>
+    </ul>
+  </div>
 
-          <div>
-            <h3 className="font-semibold text-white mb-4">Frontend</h3>
-            <ul className="space-y-2 text-2xl">
-              <li className="flex items-center gap-2"><img src={html} alt="" 
-               className="w-10 h-10"/>HTML</li>
-              <li className="flex items-center gap-2"><img src={css} alt="" 
-               className="w-10 h-10"/> CSS </li>
-              <li className="flex items-center gap-2"><img src={js} alt=""  
-              className="w-10 h-10"/> JavaScript</li>
-              <li className="flex items-center  gap-2"><img src={react} alt=""  
-              className="w-10 h-10"/> React</li>
-              <li className="flex items-center  gap-2"><img src={tailwind} alt=""  
-              className="w-10 h-10"/> Tailwind CSS</li>
-              <li className="flex items-center  gap-2"><img src={fammer} alt=""  
-              className="w-10 h-10"/> Framer Motion</li>
-              <li className="flex items-center gap-2"><img src={sass} alt=""
-               className="w-10 h-10"/> SASS</li>
-            </ul>
-          </div>
+  {/* TOOLS */}
+  <div className="grid md:grid-cols-2 gap-12 mb-20">
+    <h3
+      data-aos="fade-right"
+      className="text-5xl font-extrabold text-white"
+    >
+      Tools
+    </h3>
+    <ul className="grid grid-cols-3 gap-6 text-gray-300 text-2xl">
+      <li data-aos="fade-up" data-aos-delay="200" className="flex items-center gap-2"><img src={git} className="w-10 h-10"/>Git</li>
+      <li data-aos="fade-up" data-aos-delay="400" className="flex items-center gap-2"><img src={github} className="w-10 h-10"/>GitHub</li>
+      <li data-aos="fade-up" data-aos-delay="600" className="flex items-center gap-2"><img src={vite} className="w-10 h-10"/>Vite</li>
+      <li data-aos="fade-up" data-aos-delay="800" className="flex items-center gap-2"><img src={npm} className="w-10 h-10"/>Npm</li>
+      <li data-aos="fade-up" data-aos-delay="1000" className="flex items-center gap-2"><img src={vs} className="w-10 h-10"/>VS Code</li>
+    </ul>
+  </div>
 
-          <div>
-            <h3 className="font-semibold text-white mb-4">Tools</h3>
-            <ul className="space-y-2 text-2xl">
-              <li className="flex items-center gap-2"><img src={git} alt=""  
-              className="w-10 h-10"/>Git</li>
-              <li className="flex items-center gap-2"><img src={github} alt=""  
-              className="w-10 h-10"/>GitHub</li>
-              <li className="flex items-center gap-2"><img src={vite} alt=""  
-              className="w-10 h-10"/>Vite</li>
-              <li className="flex items-center gap-2"><img src={npm} alt=""  
-              className="w-10 h-10"/>Npm</li>
-              <li className="flex items-center gap-2"><img src={vs} alt=""  
-              className="w-10 h-10"/>VS Code</li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-semibold text-white mb-4">Learning</h3>
-            <ul className="space-y-2 text-2xl">
-              <li className="flex items-center gap-2"><img src={typescript} alt=""  
-              className="w-10 h-10"/>TypeScript</li>
-              <li className="flex items-center gap-2"><img src={python} alt=""  
-              className="w-10 h-10"/>Python</li>
-              <li className="flex items-center gap-2"><img src={node} alt=""  
-              className="w-10 h-10"/>Node.js</li>
-            </ul>
-          </div>
-
-        </div>
-      </section>
+  {/* LEARNING */}
+  <div className="grid md:grid-cols-2 gap-12">
+    <h3
+      data-aos="fade-right"
+      className="text-5xl font-extrabold text-white"
+    >
+      Learning
+    </h3>
+    <ul className="grid grid-cols-3 gap-6 text-gray-300 text-2xl">
+      <li data-aos="fade-up" data-aos-delay="200" className="flex items-center gap-2"><img src={typescript} className="w-10 h-10"/>TypeScript</li>
+      <li data-aos="fade-up" data-aos-delay="400" className="flex items-center gap-2"><img src={python} className="w-10 h-10"/>Python</li>
+      <li data-aos="fade-up" data-aos-delay="600" className="flex items-center gap-2"><img src={node} className="w-10 h-10"/>Node.js</li>
+    </ul>
+  </div>
+</section>
 
       {/* EXPERIENCE */}
-      <section className="py-32 px-8 md:px-20 max-w-6xl mx-auto">
+      <section  data-aos="zoom-out-up"
+      className="py-32 px-8 md:px-20 max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold mb-10">Experience</h2>
 <p className="text-gray-400 max-w-3xl">
           I build personal projects, practice real-world UI patterns,
@@ -174,7 +188,7 @@ export default function Home() {
       </section>
 
       {/* PROJECTS */}
-       <section id="projects" className="min-h-screen bg-black px-20 pt-40 z-1000">
+       <section data-aos="flip-up" id="projects" className="min-h-screen bg-black px-20 pt-40 z-1000">
       <Projects/>
     </section>
     </main>

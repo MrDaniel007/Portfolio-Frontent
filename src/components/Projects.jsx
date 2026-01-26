@@ -17,7 +17,7 @@ export default function Projects() {
  
 
   return (
-    <section className="relative py-32 bg-black text-white">
+    <section className="relative pt-14 pb-32 bg-black text-white">
       {data.map((p) => (
   <a
     key={p.id}

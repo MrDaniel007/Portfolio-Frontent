@@ -1,46 +1,37 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
-export default function Loader({ onFinish }) {
-  const videoRef = useRef(null);
-  const audioRef = useRef(null);
-  const [hide, setHide] = useState(false);
+export default function Loader() {
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const video = videoRef.current;
-    const audio = audioRef.current;
+    let start = 0;
+    const interval = setInterval(() => {
+      start += 1;
+      setProgress(start);
+      if (start >= 100) clearInterval(interval);
+    }, 20); // скорость лазера
 
-    if (!video || !audio) return;
-
-    video.play().catch(() => {});
-    audio.volume = 0.8;
-    audio.play().catch(() => {});
-
-    video.onended = () => {
-      setHide(true);
-      audio.pause();
-      audio.currentTime = 0;
-
-      setTimeout(() => {
-        onFinish();
-      }, 2000);
-    };
-  }, [onFinish]);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div
-      className={`fixed inset-0 z-[9999] bg-black transition-opacity duration-[1500ms]
-        ${hide ? "opacity-0 pointer-events-none" : "opacity-100"}`}
-      onClick={(e) => e.preventDefault()}
+      className="fixed inset-0 z-[99999] pointer-events-none"
+      style={{
+        clipPath: `inset(${progress}% 0 0 0)`,
+        transition: "clip-path 0.02s linear",
+      }}
     >
-      <video
-        ref={videoRef}
-        src="/helmet.mp4"
-        muted
-        playsInline
-        preload="auto"
-        className="w-full h-full object-cover"
+      {/* СИНИЙ СЛОЙ */}
+      <div className="absolute inset-0 bg-gray-800" />
+
+      {/* ЛАЗЕР */}
+      <div
+        className="absolute left-0 w-full h-[4px] bg-cyan-300 shadow-[0_0_25px_10px_rgba(56,189,248,0.9)]"
+        style={{
+          top: `${progress}vh`,
+        }}
       />
-      <audio ref={audioRef} src="/soundPower.mp3" preload="auto" />
     </div>
   );
 }
