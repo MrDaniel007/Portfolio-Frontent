@@ -84,7 +84,7 @@ export default function Home() {
         data-aos-easing="ease-out-cubic"
         data-aos-duration="1500"
         data-aos-once="false"
-        id="about" className=" py-32 px-8 md:px-20 max-w-[80%] mx-auto">
+        id="about" className="max-w-64 md:max-w-3xl lg:max-w-6xl py-32 px-8 md:px-20  mx-auto">
         <h2 className="text-3xl font-bold mb-10">This is me</h2>
 
         <div className="grid md:grid-cols-2 gap-10 text-gray-300">
@@ -105,7 +105,7 @@ export default function Home() {
       </section>
 
       {/* STACK */}
-      <section className="py-32 px-8 md:px-20 bg-neutral-900">
+      <section className=" py-32 px-8 md:px-20 bg-neutral-900">
         <div className="flex items-center gap-6 mb-16">
          
           <img     // Реактор Iron Man 
@@ -174,7 +174,7 @@ export default function Home() {
       {/* EXPERIENCE */}
       <section id="experience" data-aos="zoom-out-up"
       data-aos-once="false"
-        className="py-32 px-8 md:px-20 max-w-6xl mx-auto">
+        className="py-32 px-8 md:px-20 max-w-64 md:max-w-xl lg:max-w-3xl mx-auto">
         <h2 className="text-3xl font-bold mb-10">Experience</h2>
         <p className="text-gray-400 max-w-3xl">
           I build personal projects, practice real-world UI patterns,
@@ -187,7 +187,7 @@ export default function Home() {
       <section data-aos="flip-up"
        data-aos-duration="2000"
        data-aos-anchor-placement="top-bottom"
-        id="projects" className="max-w-6xl mx-auto bg-black px-4 sm:px-6 md:px-12 lg:px-20 pt-24 md:pt-40 overflow-x-hidden z-99">
+        id="projects" className=" max-w-64 md:max-w-xl lg:max-w-3xl mx-auto bg-black px-4 sm:px-6 md:px-12 lg:px-20 pt-24 md:pt-40 overflow-x-hidden z-99">
         <Projects />
       </section>
 
@@ -195,7 +195,7 @@ export default function Home() {
         data-aos="flip-up"
         data-aos-duration="2000"
        data-aos-anchor-placement="top-bottom"
-        className="w-full max-w-[768px] mx-auto px-4 overflow-hidden">
+        className=" max-w-64 md:max-w-xl lg:max-w-3xl mx-auto px-4 overflow-hidden">
         <Contact />
       </section>
 

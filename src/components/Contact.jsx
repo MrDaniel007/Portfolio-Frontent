@@ -27,7 +27,7 @@ const publicKey = import.meta.env.VITE_EMAIL_PUBLIC_KEY;
   return (
     <section
       id="contact"
-      className="bg-black text-white flex items-center justify-center px-6"
+      className="bg-black text-white flex items-center justify-center px-2 md:px-4 lg:px-6"
     >
       <form
         onSubmit={sendEmail}
