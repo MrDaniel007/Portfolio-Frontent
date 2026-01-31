@@ -24,7 +24,7 @@ import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
-    <main className="bg-black text-white">
+    <main className="bg-black text-white mx-auto">
 
       {/* HERO */}
       <section id="home" className="min-h-screen flex items-center px-4 sm:px-6 md:px-12 lg:px-20">
@@ -84,7 +84,7 @@ export default function Home() {
         data-aos-easing="ease-out-cubic"
         data-aos-duration="1500"
         data-aos-once="false"
-        id="about" className="py-32 px-8 md:px-20 max-w-6xl mx-auto">
+        id="about" className=" py-32 px-8 md:px-20 max-w-[80%] mx-auto">
         <h2 className="text-3xl font-bold mb-10">This is me</h2>
 
         <div className="grid md:grid-cols-2 gap-10 text-gray-300">
@@ -107,8 +107,8 @@ export default function Home() {
       {/* STACK */}
       <section className="py-32 px-8 md:px-20 bg-neutral-900">
         <div className="flex items-center gap-6 mb-16">
-          {/* Реактор Iron Man */}
-          <img
+         
+          <img     // Реактор Iron Man 
             src={Reactor} // твой SVG файл реактора
             alt="Arc Reactor"
             className="w-16 h-16 animate-spin-slow"
@@ -187,7 +187,7 @@ export default function Home() {
       <section data-aos="flip-up"
        data-aos-duration="2000"
        data-aos-anchor-placement="top-bottom"
-        id="projects" className="max-w-7xl bg-black px-4 sm:px-6 md:px-12 lg:px-20 pt-24 md:pt-40 overflow-hidden z-99">
+        id="projects" className="max-w-6xl mx-auto bg-black px-4 sm:px-6 md:px-12 lg:px-20 pt-24 md:pt-40 overflow-x-hidden z-99">
         <Projects />
       </section>
 
@@ -199,10 +199,10 @@ export default function Home() {
         <Contact />
       </section>
 
-      <section id="resume" className="w-full h-[600px] flex justify-center items-center">
+      <section id="resume" className="max-w-full  h-[600px] flex justify-center items-center  ">
         <Link to="/resume">
           <MagneticButton>
-            <div className="max-w-40 p-2 border border-cyan-400
+            <div className="max-w-40  p-2 border border-cyan-400
           text-cyan-400 rounded-full
               hover:bg-cyan-400 hover:text-black transition">
               Show  Resume
