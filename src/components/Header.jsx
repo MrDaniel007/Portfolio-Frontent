@@ -15,7 +15,7 @@ export default function Header({ setHoverText }) {
         </div>
 
         {/* STATUS */}
-<div   className="hidden md:flex items-center gap-2 text-sm text-gray-600 absolute top-6 left-[85%]">
+<div   className="hidden md:flex items-center gap-2 text-sm text-gray-600 absolute top-6 left-[65%] md:left-[75%] lg:left-[80%]">
   <span className="relative flex h-3 w-3">
     {/* пульсация */}
     <span className="absolute inset-0 rounded-full bg-green-400 opacity-75 animate-ping"></span>
