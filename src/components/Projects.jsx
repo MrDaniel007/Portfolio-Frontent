@@ -17,7 +17,7 @@ export default function Projects() {
  
 
   return (
-    <section className="relative pt-14 pb-32 bg-black text-white">
+    <section className="max-w-[1240px] relative pt-14 pb-20 bg-black text-white">
       {data.map((p) => (
   <a
     key={p.id}

@@ -22,8 +22,9 @@ useEffect(() => {
   AOS.init({
     duration: 1000,       // Длительность анимации
     easing: 'ease-out-cubic',
-    once: false,           // Анимация повторяется при скролле
-    mirror: true,          // Повторять анимацию при скролле вверх
+    once: true,           // Анимация повторяется при скролле
+    mirror: false,
+    disable: 'phone', // Отключить на телефонах
   });
   AOS.refresh();           // Обновление всех элементов
 }, []);

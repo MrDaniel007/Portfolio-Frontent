@@ -41,7 +41,7 @@ function ScrollBar() {
         fixed right-4 top-1/2 -translate-y-1/2
         h-40 w-[3px] rounded-full
         bg-white/20 backdrop-blur
-        transition-opacity duration-300
+        transition-opacity duration-300 z-50
         ${visible ? "opacity-100" : "opacity-0"}
       `}
     >
