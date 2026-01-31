@@ -40,9 +40,9 @@ export default function BurgerMenu() {
             {/* LEFT SIDE (SOCIALS) */}
             <div className="w-1/2 flex flex-col justify-center items-start pl-6 gap-6 text-white">
               <p className="text-orange-500 text-sm">CONTACT</p>
-              <a href="https://t.me/gypsum" className="hover:text-orange-500">Telegram</a>
+              <a href="https://t.me/gypsum_2025" className="hover:text-orange-500">Telegram</a>
               <a href="https://github.com/MrDaniel007" className="hover:text-orange-500">GitHub</a>
-              <a href="https://linkedin.com" className="hover:text-orange-500">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/даниэль-махамадзакиров-7907363a2" className="hover:text-orange-500">LinkedIn</a>
             </div>
 
             {/* RIGHT SIDE (NAVIGATION) */}
@@ -61,6 +61,9 @@ export default function BurgerMenu() {
               </a>
               <a href="#contact" onClick={() => setOpen(false)} className="hover:text-orange-500">
                 Contact
+              </a>
+              <a href="#resume" onClick={() => setOpen(false)} className="hover:text-orange-500">
+                Resume
               </a>
             </div>
           </motion.aside>
