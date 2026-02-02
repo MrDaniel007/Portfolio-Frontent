@@ -8,7 +8,7 @@ import { useEffect } from "react";
 const data = [
   { id: 1, title: "Kicks Project", tech: "React / Tailwind", img, link: "https://kicks-project-delta.vercel.app/" },
   { id: 2, title: "Shop App", tech: "React / API", img: "https://res.cloudinary.com/duoem1xgw/image/upload/v1768449064/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_2025-10-11_003206_rh8d4v.png", link: "https://shopapp.vercel.app" },
-  { id: 3, title: "Ozone(clone)", tech: "Motion / UX", img, link: "https://portfolio.vercel.app" },
+  { id: 3, title: "Ozone(clone)", tech: "Motion / UX", img: "https://www.caravan.kz/wp-content/uploads/2025/12/7354359884.jpg", link: "https://ozon.vercel.app/" },
 ];
 
 export default function Projects() {
@@ -39,16 +39,27 @@ export default function Projects() {
     <span className="ml-4 text-sm opacity-50">{p.tech}</span>
   </a>
 ))}
-
-      {active && (
-        <motion.img
-          src={active.img}
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0 }}
-          className="fixed right-20 top-1/3 w-80 -translate-y-1/2 rounded-lg shadow-xl"
-        />
-      )}
+{active && (
+  <motion.img
+    src={active.img}
+    initial={{ opacity: 0, scale: 0.95 }}
+    animate={{ opacity: 1, scale: 1 }}
+    exit={{ opacity: 0 }}
+    className="
+      fixed 
+      right-1 
+      top-1/2 
+      -translate-y-1/2
+      w-72 
+      h-44
+      object-cover
+      rounded-xl 
+      shadow-2xl
+      pointer-events-none
+      hidden lg:block
+    "
+  />
+)}
     </section>
   );
 }
