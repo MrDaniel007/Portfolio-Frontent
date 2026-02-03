@@ -10,6 +10,7 @@ export default function Header({ setHoverText }) {
           className="text-2xl font-bold cursor-pointer text-white"
           onMouseEnter={() => setHoverText(true)}
           onMouseLeave={() => setHoverText(false)}
+          onClick={() => document.getElementById("home").scrollIntoView({behavior: "smooth"})}
         >
           Daniel<span className="text-orange-500">.</span>
         </div>
@@ -24,7 +25,7 @@ export default function Header({ setHoverText }) {
     <span className="absolute inset-0 m-auto h-2 w-2 rounded-full bg-green-500"></span>
   </span>
 
-   <span>Open to work</span>
+   <span onClick={() => document.getElementById("contact").scrollIntoView({behavior: "smooth"})}>Open to work</span>
 </div>
 
       </div>
