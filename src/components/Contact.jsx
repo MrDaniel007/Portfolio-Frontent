@@ -27,13 +27,13 @@ const publicKey = import.meta.env.VITE_EMAIL_PUBLIC_KEY;
   return (
     <section
       id="contact"
-      className="bg-black text-white flex items-center justify-center px-2 md:px-4 lg:px-6"
+      className="bg-black text-white flex items-center justify-center px-1 md:px-4 lg:px-6"
     >
       <form
         onSubmit={sendEmail}
-        className="w-full max-w-lg p-10 border border-cyan-400/30 rounded-2xl"
+        className="w-full max-w-lg p-4 md:p-6 lg:p-10 border border-cyan-400/30 rounded-2xl"
       >
-        <h2 className="text-4xl font-bold mb-8 text-center">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-8 text-center">
           Contact <span className="text-cyan-400">me</span>
         </h2>
 
