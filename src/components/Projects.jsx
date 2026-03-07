@@ -47,11 +47,11 @@ export default function Projects() {
     exit={{ opacity: 0 }}
     className="
       fixed 
-      right-1 
+      right-1
       top-1/2 
       -translate-y-1/2
-      w-72 
-      h-44
+      w-80 
+      h-48
       object-cover
       rounded-xl 
       shadow-2xl

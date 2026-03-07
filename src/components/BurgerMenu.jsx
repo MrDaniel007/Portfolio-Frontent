@@ -16,14 +16,14 @@ export default function BurgerMenu() {
             rotate: open ? 45 : 0,
             y: open ? 8 : 0,
           }}
-          className="w-8 h-[2px] bg-white block"
+          className="w-8 h-[2px] md:w-10 md:h-[3px] lg:w-11 lg:h-[4px] bg-white block"
         />
         <motion.span
           animate={{
             rotate: open ? -45 : 0,
             y: open ? -8 : 0,
           }}
-          className="w-8 h-[2px] bg-white block"
+          className="w-8 h-[2px] md:w-10 md:h-[3px] lg:w-11 lg:h-[4px] bg-white block"
         />
       </button>
 

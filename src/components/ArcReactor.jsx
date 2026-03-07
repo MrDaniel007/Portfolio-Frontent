@@ -8,7 +8,7 @@ export default function ArcReactor() {
   return (
     
     <div
-      className="w-56 h-56 flex items-center justify-center"
+      className="w-80 h-80 flex items-center justify-center"
       onMouseDown={() => setActive(true)}
       onMouseUp={() => setActive(false)}
       onMouseEnter={() => setHovered(true)}  // мышь навела
